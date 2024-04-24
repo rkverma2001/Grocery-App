@@ -12,31 +12,27 @@ const Items = ({ itemName, index, items, setItems, isPurchased }) => {
   };
 
   return (
-    <div className="items">
-      <div>
+    <div className="item-container">
+      <div className="checkbox-container">
         <input
           type="checkbox"
-          checked={isPurchased ? true : false}
+          checked={isPurchased}
           onChange={(e) => {
             setIsChecked((prevValue) => !prevValue);
             setItems((prevState) => {
-                const data = [...prevState]
-                data[index].purchased = !isPurchased;
-                return data
-            })
+              const data = [...prevState];
+              data[index].purchased = !isPurchased;
+              return data;
+            });
           }}
         />
       </div>
-      <div>
-        <p
-          style={{
-            textDecoration: isPurchased ? "line-through" : "none",
-          }}
-        >
+      <div className="item-name">
+        <p style={{ textDecoration: isPurchased ? "line-through" : "none" }}>
           {itemName}
         </p>
       </div>
-      <div>
+      <div className="delete-button-container">
         <button onClick={deleteHandler}>Delete</button>
       </div>
     </div>

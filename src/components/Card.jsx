@@ -34,19 +34,22 @@ const Card = () => {
   };
 
   return (
-    <div className="card">
-      <h2>Grocery Bud</h2>
-      <div>
-        <input
-          value={textInput}
-          onChange={(e) => {
-            setTextinput(e.target.value);
-          }}
-          type="text"
-        />
-        <button onClick={onClickHandler}>Add Item</button>
+    <div>
+      <div className="card">
+        <h2>Grocery Bud</h2>
+        <div className="input-container">
+          <input
+            value={textInput}
+            onChange={(e) => {
+              setTextinput(e.target.value);
+            }}
+            type="text"
+          />
+          <button onClick={onClickHandler}>Add Item</button>
+        </div>
       </div>
-      <div>
+
+      <div className="list-container">
         {items.map((elem, index) => (
           <Items
             items={items}

@@ -1,7 +1,44 @@
-.items {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+.item-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px;
+}
 
+.checkbox-container {
+  margin-right: 15px;
+}
+
+.item-name p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.delete-button-container button {
+  background-color: #f44336;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.delete-button-container button:hover {
+  background-color: #d32f2f;
+}
+
+/* Additional Styles for Better Accessibility */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
